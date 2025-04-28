@@ -1,0 +1,15 @@
+configfile: "configs/config.yaml"
+
+script_executor = {".py": "uv run {script}"}
+
+onerror: shell('ppo "An error occured in the workflow"')
+
+onsuccess: shell('ppo "Your workflow has completed successfully"')
+
+rule extract_word_count:
+    input:
+        "data/glossaries.json"
+    output:
+        "data/epu_batches/batch_0.jsonl" # and all the other batches
+    script:
+        "extract_word_count.py"

@@ -1,0 +1,25 @@
+[project]
+name = "epu"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fitz>=0.0.1.dev2",
+    "frontend>=0.0.3",
+    "openpyxl>=3.1.5",
+    "pregex>=2.3.3",
+    "pydantic>=2.11.3",
+    "pymupdf>=1.25.3",
+    "pypushover",
+    "pyyaml>=6.0.2",
+    "snakemake>=9.3.2",
+    "tqdm>=4.67.1",
+]
+
+[tool.uv.sources]
+pypushover = { git = "https://github.com/marcellgranat/pypushover" }
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["structure"]
